@@ -41,7 +41,7 @@ const Home = () => {
         } else {
 
             router.push(`/?page=${pageNumber}`)
-            // window.location.href = `/?page=${pageNumber}`
+            window.location.href = `/?page=${pageNumber}`
         }
 
     }

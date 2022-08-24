@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 
-import { signIn } from 'next-auth/client'
+import { signIn } from 'next-auth/react'
 
 import { toast } from 'react-toastify'
 import ButtonLoader from '../layout/ButtonLoader'

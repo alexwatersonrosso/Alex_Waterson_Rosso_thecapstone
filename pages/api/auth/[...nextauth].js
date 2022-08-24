@@ -6,7 +6,7 @@ import dbConnect from '../../../config/dbConnect'
 
 export default NextAuth({
     session: {
-        jwt: true
+        strategy: "jwt"
     },
     providers: [
         Providers.Credentials({
@@ -41,12 +41,12 @@ export default NextAuth({
         })
     ],
     callbacks: {
-        jwt: async (token, user) => {
+        jwt: async ({token, user}) => {
 
             user && (token.user = user)
             return Promise.resolve(token)
         },
-        session: async (session, user) => {
+        session: async ({session, user}) => {
 
             session.user = user.user
             return Promise.resolve(session)
